@@ -19,4 +19,5 @@ int main()
     printf("Once upon a time there was a developer named %s who struggled to solve a problem of %d rate",game[0],rate);
     printf("\nThe ballon of given problem had a %s color which was %s's favourite color",game[2],game[0]);
     printf("\nTherefor %s was called to solve this problem for %s and it ended %s.",game[1],game[0],game[3]);
+
 }
