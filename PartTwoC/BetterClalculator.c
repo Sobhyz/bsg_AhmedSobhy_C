@@ -31,8 +31,8 @@ double power(double base, double powerr)
 
 double factorial(double num)
 {
-    for(int i=num-1;num>0;num--)
-        num=mul(num,i);
+    for(int i=num-1;i>0;i--)
+        num*=i;
     return num;
 }
 
