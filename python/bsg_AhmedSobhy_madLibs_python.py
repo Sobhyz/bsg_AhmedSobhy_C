@@ -1,0 +1,6 @@
+name = input("enter a name: ")
+name2 = input("enter another name: ")
+num=eval(input("enter a number: "))
+print(f"{name} owes {name2} {num} pounds")
+print("but {0} doesn't want to pay".format(name))
+print("what should they do")
