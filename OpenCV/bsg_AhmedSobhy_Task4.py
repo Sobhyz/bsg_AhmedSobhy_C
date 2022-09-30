@@ -9,6 +9,7 @@ def mouse(event, x, y, flags, params):
     if event == cv.EVENT_RBUTTONDOWN:
         circles.pop()
 
+
 while 1:
     img = np.zeros((480,720,3), np.uint8)
     for i in circles:
