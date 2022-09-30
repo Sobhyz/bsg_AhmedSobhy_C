@@ -4,11 +4,12 @@ import cv2 as cv
 vid = cv.VideoCapture(0)
 cap = 0
 
-saved = cv.VideoWriter("video.avi", -1, 20.0, (720,480))
+saved = cv.VideoWriter("video.avi", cv.VideoWriter_fourcc(*'MJPG'), 20.0, (720,480))
 r=0
 g=0
 h=0
 x=0
+s=0
 width,height = 720,480
 
 while 1:
@@ -30,12 +31,16 @@ while 1:
     if r:
         M = cv.getRotationMatrix2D((width/2,height/2),90,1) 
         img = cv.warpAffine(img,M,(width,height)) 
+    if s:
+        saved.write(img)
     cv.imshow("final", img)
     input = cv.waitKey(1)
     
     if input == ord('c'):
         cv.imwrite(f"img {cap}.png", img)
         cap+=1
+    elif input == ord('s'):
+        s=1
     elif input==ord('g'):
         g,h,x=1,0,0
     elif input == ord('h'):
