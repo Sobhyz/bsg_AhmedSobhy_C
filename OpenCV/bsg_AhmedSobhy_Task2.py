@@ -46,12 +46,13 @@ while 1:
     elif input == ord('h'):
         h,g,x=1,0,0
     elif input == ord('z'):
-        r=g=h=x=0
+        g=h=x=0
     elif input == ord('r'):
         r,x=1,0
     elif input == ord('x'):
-        x,h,g,r=1,0,0,0
+        x,h,g=1,0,0
     elif input == ord('q'):
         break
-vid.release()
-saved.release()
+if s:
+    vid.release()
+    saved.release()
