@@ -19,4 +19,4 @@ for i in range(4):
 
 img = cv.resize(img,(200,200))
 cv.imshow("final", img)
-cv.waitKey(0)
+cv.waitKey(60000)
