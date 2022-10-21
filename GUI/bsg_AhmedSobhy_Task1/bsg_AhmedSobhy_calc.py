@@ -12,6 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 op=""
 num1,num2=0,0
+c=1
 d=0
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -166,32 +167,38 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def press(self,pr):
-        global op,d,num1,num2
+        global op,d,num1,num2,c
         if pr == 'C':
             self.label.setText('0')
             num1=num2=0
             d=0
+            c=1
             op=""
         elif pr == '%':
             if op=="":
                 op+=pr
                 d=0
+                c=1
         elif pr == '/':
             if op=="":
                 op+=pr
+                c=1
                 d=0
         elif pr == '-':
             if op=="":
                 op+=pr
                 d=0
+                c=1
         elif pr == 'x':
             if op=="":
                 op+=pr
                 d=0
+                c=1
         elif pr == '+':
             if op=="":
                 op+=pr
                 d=0
+                c=1
         if pr=='!':
             if op=="":
                 num1*=-1
@@ -207,13 +214,15 @@ class Ui_MainWindow(object):
         if pr>='0' and pr<='9':
             if op=="":
                 if d:
-                    num1+=(int(pr)/10)
+                    num1+=(int(pr)/(10**c))
+                    c+=1
                 else:
                     num1*=10
                     num1+=int(pr)
             else:
                 if d:
-                    num2+=(int(pr)/10)
+                    num2+=(int(pr)/(10**c))
+                    c+=1
                 else:
                     num2*=10
                     num2+=int(pr)
@@ -233,6 +242,7 @@ class Ui_MainWindow(object):
             num1=num2=0
             op=""
             d=0
+            c=1
             
         elif op=="":
             self.label.setText(f"{num1}")
