@@ -1,4 +1,3 @@
-from sre_constants import SUCCESS
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap
@@ -11,7 +10,7 @@ class UI(QMainWindow):
 
         self.openPhoto = self.findChild(QPushButton, "pushButton")
         self.Photo = self.findChild(QLabel, "label")
-
+        
         self.openPhoto.clicked.connect(self.OP)
 
         self.show()
