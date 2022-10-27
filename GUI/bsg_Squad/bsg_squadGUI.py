@@ -7,18 +7,16 @@ from PyQt5 import uic
 
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-import sys,keyboard
+
+import sys
 
 class UI(QMainWindow):
     def __init__(self):
         super(UI,self).__init__()
         uic.loadUi("/Users/Sobhyzz/bsg_AhmedSobhy_C/GUI/bsg_Squad/VortexGUI.ui",self)
+        
         self.flag=False
         self.count=0
-        # self.MainWindow = self.findChild(QMainWindow, "MainWindow")
-
-        # self.MainWindow.resize(1110, 828)
-        # self.MainWindow.setFixedSize(1112, 828)
 
         self.centralWidget= self.findChild(QWidget, "centralwidget")
         self.setCentralWidget(self.centralWidget)
@@ -105,6 +103,7 @@ class UI(QMainWindow):
 
     def ImageUpdateSlot(self, Image):
         self.C1.setPixmap(QPixmap.fromImage(Image))
+    
     def ChangeMode(self,modee):
         self.mode.setText(modee)
 

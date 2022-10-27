@@ -12,4 +12,4 @@ while True:
         encoded,buffer = cv.imencode('.jpg',frame,[cv.IMWRITE_JPEG_QUALITY,80])
         message = base64.b64encode(buffer)
         conn.send(message)
-
+        
